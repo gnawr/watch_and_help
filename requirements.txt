@@ -33,7 +33,7 @@ hiredis==1.1.0
 idna==2.8
 importlib-metadata==2.0.0
 ipdb==0.13.4
-ipython==7.18.1
+# ipython==7.18.1
 ipython-genutils==0.2.0
 jedi==0.17.2
 jsonschema==3.2.0
@@ -41,14 +41,14 @@ jupyter-core==4.6.3
 kiwisolver==1.2.0
 Markdown==3.3
 matplotlib==3.3.2
-mkl-fft==1.2.0
-mkl-random==1.1.1
-mkl-service==2.3.0
+# mkl-fft==1.2.0
+# mkl-random==1.1.1
+# mkl-service==2.3.0
 msgpack==1.0.0
 multidict==4.7.6
 nbformat==5.0.7
 networkx==2.3
-numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1596233707986/work
+# numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1596233707986/work
 nvidia-ml-py3==7.352.0
 oauthlib==3.1.0
 olefile==0.46
@@ -58,7 +58,7 @@ opencv-python==4.0.0.21
 parso==0.7.1
 pexpect==4.8.0
 pickleshare==0.7.5
-Pillow @ file:///tmp/build/80754af9/pillow_1594307325547/work
+# Pillo w @ file:///tmp/build/80754af9/pillow_1594307325547/work
 plotly==3.10.0
 prometheus-client==0.8.0
 prompt-toolkit==3.0.8

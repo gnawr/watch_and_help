@@ -26,7 +26,7 @@ if __name__ == '__main__':
     args.dataset_path = './dataset/test_env_set_help.pik'
     args.mode = 'hp'
     env_task_set = pickle.load(open(args.dataset_path, 'rb'))
-
+    args.executable_file = '../virtualhome/macos_exec.app'
 
     args.record_dir = '../test_results/multiAlice_env_task_set_{}_{}'.format(args.num_per_apartment, args.mode)
     if not os.path.exists(args.record_dir):

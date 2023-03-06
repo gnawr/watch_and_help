@@ -12,6 +12,8 @@ from agents import MCTS_agent, Random_agent
 from arguments import get_args
 from algos.arena_mp2 import ArenaMP
 from utils import utils_goals
+# from simulation.unity_simulator import utils_viz
+
 
 
 
@@ -21,6 +23,7 @@ if __name__ == '__main__':
     args.num_per_apartment = 20
     args.mode = 'random_action'
     args.dataset_path = './dataset/test_env_set_help.pik'
+    args.executable_file = '../virtualhome/macos_exec.app'
 
     env_task_set = pickle.load(open(args.dataset_path, 'rb'))
     args.record_dir = '../test_results/multiBob_env_task_set_{}_{}'.format(args.num_per_apartment, args.mode)
@@ -40,6 +43,13 @@ if __name__ == '__main__':
     #seeds =
     test_results = {}
 
+    recording_options={'recording': True, 
+                    'output_folder': '../data/Output', 
+                    'file_name_prefix': 'test',
+                    'cameras': 'PERSON_FROM_BACK',
+                    'modality': 'normal'
+    }
+
     def env_fn(env_id):
         return UnityEnvironment(num_agents=2,
                                max_episode_length=args.max_episode_length,
@@ -48,6 +58,7 @@ if __name__ == '__main__':
                                observation_types=[args.obs_type, args.obs_type],
                                use_editor=args.use_editor,
                                executable_args=executable_args,
+                               recording_options=recording_options,
                                base_port=args.base_port)
 
     args_common = dict(recursive=False,
@@ -135,3 +146,8 @@ if __name__ == '__main__':
         print('average steps (finishing the tasks):', np.array(steps_list).mean() if len(steps_list) > 0 else None)
         print('failed_tasks:', failed_tasks)
         pickle.dump(test_results, open(args.record_dir + '/results_{}.pik'.format(0), 'wb'))
+
+        # # generate the video from the outputs
+        # path = '../data/Output'
+        # prefix = 'test'
+        # utils_viz.generate_video(input_path=path, prefix=prefix, output_path='../data')

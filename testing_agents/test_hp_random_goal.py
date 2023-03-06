@@ -73,6 +73,7 @@ if __name__ == '__main__':
     args.num_per_apartment = 10
     args.mode = 'hp_randomgoal'
     args.dataset_path = './dataset/test_env_set_help.pik'
+    args.executable_file = '../virtualhome/macos_exec.app'
 
     env_task_set = pickle.load(open(args.dataset_path, 'rb'))
     args.record_dir = '../test_results/multiBob_env_task_set_{}_{}'.format(args.num_per_apartment, args.mode)
